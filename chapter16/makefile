@@ -8,7 +8,12 @@ all: \
     StackTemplate\
     Array3\
     TStackTest\
-    TPStashTest
+    TPStashTest\
+    OwnerStackTest\
+    ValueStackTest\
+    IterIntStack\
+    NestedIterator\
+    IterStackTemplateTest
 IntStack: IntStack.cpp fibonacci.cpp
 	$(CPP) $(OFLAG)IntStack \
 IntStack.cpp fibonacci.cpp
@@ -24,3 +29,13 @@ TStackTest: TStackTest.cpp
 	$(CPP) $(OFLAG)TStackTest TStackTest.cpp
 TPStashTest: TPStashTest.cpp AutoCounter.cpp TPStash.h
 	$(CPP) $(OFLAG)TPStashTest TPStashTest.cpp AutoCounter.cpp
+OwnerStackTest: OwnerStackTest.cpp AutoCounter.cpp
+	$(CPP) $(OFLAG)OwnerStack OwnerStackTest.cpp AutoCounter.cpp
+ValueStackTest: ValueStackTest.cpp SelfCounter.cpp
+	$(CPP) $(OFLAG)ValueStackTest  ValueStackTest.cpp SelfCounter.cpp
+InterIntStack: IterIntStack.cpp fibonacci.cpp
+	$(CPP) $(OFLAG)IterIntStack IterIntStack.cpp fibonacci.cpp
+NestedIterator: NestedIterator.cpp fibonacci.cpp
+	$(CPP) $(OFLAG)NestedIterator NestedIterator.cpp fibonacci.cpp
+IterStackTemplateTest: IterStackTemplateTest.cpp fibonacci.cpp IterStackTemplate.h
+	$(CPP) $(OFLAG)IterStackTemplateTest IterStackTemplateTest.cpp fibonacci.cpp
